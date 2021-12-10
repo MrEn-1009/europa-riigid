@@ -1,10 +1,22 @@
+from module1 import *
 f = open('TextFile1.txt' , 'r')
 riigid ={}
+riigid2 ={}
+riig=linn=[]
 for line in f:
     k, v=line.strip().split('-')
     riigid[k.strip()] = v.strip()
+    riigid2[v.strip()] = k.strip()
+    riig.append(k)
+    linn.append(riigid[k.strip()])
 z=''
-z=input('Что вы хотите сделать?\nВвод страны и показ его столицы - 1\nДобавление страны и столицы - 2\nУдаление страны и столицы - 3\nТест - 4\n ')
-if z=='1':
-    x=input('Какой страны вы хотите увидеть столицу? ')
-    print(riigid[x])
+while True:
+    z=input('Что вы хотите сделать?\nВвод страны и показ его столицы - 1\nТест - 2\n')
+    if z=='1':
+        haf(riigid,riigid2)
+    elif z=='2':
+        test(riigid,riigid2,riig,linn)
+    else:
+        print('Ты что-то не то ввёл')
+        break
+
